@@ -3,5 +3,15 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    return s.trim().replace(/\s+/g, ' ').split(' ').reverse().join(' ');
+ 
+    let ss = s.trim().replace(/\s+/g, ' ').split(' ');
+       let l=0,r=ss.length-1;
+    while(l<r){
+        let temp = ss[l];
+        ss[l] = ss[r];
+        ss[r] = temp;
+        l++
+        r--
+    }
+    return ss.join(' ');
 };
